@@ -318,46 +318,6 @@
     // Responsive videos with fitVids
     post.fitVids();
 
-    var mdSelector=".highlight pre";
-    var rstSelector=".highlight pre";
-    {% if article.source_path and article.source_path.lower().endswith(('.md','.markdown')) %}
-    var selector=mdSelector;
-    {% elif article.source_path and article.source_path.lower().endswith(('.rst','.rest')) %}
-    var selector=rstSelector;
-    {% else %}
-    var selector=rstSelector;
-    {% endif %}
-    // Format code blocks and add line numbers
-    function codestyling() {
-      $(selector).each(function(i, e) {
-        // Code highlight
-        hljs.highlightElement(e);
-        // No lines for plain text blocks
-        if (!$(this).hasClass('language-text')) {
-          var code = $(this);
-          // Calculate amount of lines
-          var lines = code.html().split(/\n(?!$)/g).length;
-          var numbers = [];
-          if (lines > 1) {
-            lines++;
-          }
-          for (i = 1; i < lines; i++) {
-            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
-          }
-          code.parent().append('<div class="lines">' + numbers + '</div>');
-        }
-      });
-    }
-
-    // Format code blocks only
-    function codestylingWithoutLineNumbers() {
-      $(selector).each(function(i, e) {
-        // Code highlight
-        hljs.highlightElement(e);
-      });
-    }
-
-    codestylingWithoutLineNumbers();
     // Reading progress bar on window top
     function readingProgress() {
       var postBottom = post.offset().top + post.height();
