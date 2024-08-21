@@ -72,11 +72,7 @@
   {% endif %}
   {% endfor %}
 
-  <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css" rel="stylesheet" />
-
-  {% if PAGEFIND_ENABLED|default(False) %}
-  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-  {% endif %}
+  {% include 'partials/extra-css.html' %}
 
   {% if CSS_OVERRIDE %}
   <!-- CSS specified by the user -->
@@ -244,8 +240,8 @@
   </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.fitvids.js"></script>
-  <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js"></script>
+
+  {% include 'partials/extra-js.html' %}
 
   {% if JS_OVERRIDE %}
   <!-- Script specified by the user -->
