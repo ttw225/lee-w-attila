@@ -121,7 +121,9 @@
           {% if article.modified and SHOW_ARTICLE_MODIFIED_TIME|default(False) %}
           &bull; <time datetime="{{ article.locale_modified }}"> Updated on {{ article.locale_modified }}</time>
           {% endif %}
-          {% if article.stats and 'read_mins' in article.stats %}
+          {% if article.statistics and 'read_mins' in article.statistics %}
+          &bull; {{ article.statistics['read_mins'] }} min read
+          {% elif article.stats and 'read_mins' in article.stats %}
           &bull; {{ article.stats['read_mins'] }} min read
           {% endif %}
         </div>

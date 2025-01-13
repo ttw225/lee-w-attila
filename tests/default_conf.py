@@ -81,15 +81,13 @@ AUTHORS_SAVE_AS = 'authors.html'
 
 ### Plugins
 
-# PLUGIN_PATHS = [
-#   'pelican-plugins'
-# ]
-
-# PLUGINS = [
-#   'sitemap',
-#   'neighbors',
-#   'assets'
-# ]
+PLUGINS = [
+    "pelican.plugins.neighbors",
+    "pelican.plugins.related_posts",
+    "pelican.plugins.sitemap",
+    "pelican.plugins.statistics",
+    "pelican.plugins.webassets",
+]
 
 # Sitemap
 SITEMAP = {

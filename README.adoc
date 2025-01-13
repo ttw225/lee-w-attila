@@ -67,8 +67,7 @@ folder name
 * Navigation support
 * Paralax cover images for posts, author archives and blog
 * Author informations for posts and author archives
-* Featured posts (via
-https://github.com/getpelican/pelican-plugins/tree/master/neighbors[plugin])
+* Featured posts (via https://github.com/pelican-plugins/neighbors[plugin])
 * Reading progress for posts
 * Automatic code syntax highlight
 * Disqus support
